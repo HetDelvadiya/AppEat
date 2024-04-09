@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:clickable="true"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="6dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/Foodimage"
+                android:layout_width="64dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/foodname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/bergihan"
+                android:text="Food Name"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Foodimage"
+                app:layout_constraintStart_toEndOf="@+id/Foodimage"
+                app:layout_constraintTop_toTopOf="@+id/Foodimage"
+                app:layout_constraintVertical_bias="0.064" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/price"
+                app:layout_constraintEnd_toStartOf="@+id/price"
+                app:layout_constraintTop_toTopOf="@+id/price" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/foodname"
+                app:layout_constraintStart_toStartOf="@+id/foodname"
+                app:layout_constraintTop_toBottomOf="@+id/foodname" />
+
+            <ImageButton
+                android:id="@+id/removeButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/addbutton_grident"
+                android:src="@drawable/minus"
+                app:layout_constraintBottom_toBottomOf="@+id/NubOfItem"
+                app:layout_constraintEnd_toStartOf="@+id/NubOfItem"
+                app:layout_constraintTop_toTopOf="@+id/NubOfItem"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/AddButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/addbutton_grident"
+                android:src="@drawable/plus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/NubOfItem"
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:text="1"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/AddButton"
+                app:layout_constraintEnd_toStartOf="@+id/AddButton"
+                app:layout_constraintTop_toTopOf="@+id/AddButton" />
+
+            <ImageButton
+                android:id="@+id/deleteButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NubOfItem"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
