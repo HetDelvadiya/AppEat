@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener
 class ProfileFragment : Fragment() {
     lateinit var binding : FragmentProfileBinding
 
-    private val   auth = FirebaseAuth.getInstance()
+    private val auth = FirebaseAuth.getInstance()
    private val database = FirebaseDatabase.getInstance()
 
 
@@ -33,6 +33,23 @@ class ProfileFragment : Fragment() {
 
         setUserData()
 
+        binding.apply {
+             name.isEnabled = false
+            email.isEnabled = false
+            address.isEnabled = false
+            phoneNumber.isEnabled = false
+
+        }
+        binding.editbutton.setOnClickListener {
+
+            binding.apply {
+                name.isEnabled = !name.isEnabled
+                email.isEnabled = !email.isEnabled
+                address.isEnabled = !address.isEnabled
+                phoneNumber.isEnabled = !phoneNumber.isEnabled
+            }
+        }
+
         binding.save.setOnClickListener {
             val name = binding.name.text.toString()
             val email = binding.email.text.toString()
@@ -40,9 +57,21 @@ class ProfileFragment : Fragment() {
             val phone = binding.phoneNumber.text.toString()
 
             updateUserData(name , email, address , phone)
+            enableEdit()
+
         }
 
         return binding.root
+    }
+
+    private fun enableEdit(){
+        binding.apply {
+            name.isEnabled = false
+            email.isEnabled = false
+            address.isEnabled = false
+            phoneNumber.isEnabled = false
+
+        }
     }
 
     private fun updateUserData(name: String, email: String, address: String, phone: String) {
@@ -72,13 +101,11 @@ class ProfileFragment : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if(snapshot.exists()){
                         val userProfile = snapshot.getValue(UserModel::class.java)
-                        if (userId != null){
-                            if (userProfile != null) {
-                                binding.name.setText(userProfile.name)
-                                binding.address.setText(userProfile.address)
-                                binding.email.setText(userProfile.email)
-                                binding.phoneNumber.setText(userProfile.phone)
-                            }
+                        if (userProfile != null) {
+                            binding.name.setText(userProfile.name)
+                            binding.address.setText(userProfile.address)
+                            binding.email.setText(userProfile.email)
+                            binding.phoneNumber.setText(userProfile.phone)
                         }
                     }
                 }

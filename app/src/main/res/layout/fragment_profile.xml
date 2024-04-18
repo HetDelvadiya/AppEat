@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.ProfileFragment"
     android:background="@color/white"
     android:orientation="vertical">
@@ -12,28 +11,35 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:fontFamily="@font/bergihan"
         android:text="Profile"
         android:textSize="20sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/editbutton"
+        android:layout_width="123dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
+        android:text="editProfile"
+        android:layout_gravity="end"
+        android:textColor="@color/black"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/address_grediant"
             android:elevation="5dp"
@@ -184,11 +190,11 @@
         android:id="@+id/save"
         android:layout_width="342dp"
         android:layout_height="55dp"
-        android:layout_gravity="bottom|center"
+        android:layout_gravity="center|bottom"
         android:background="@drawable/button_grident"
         android:fontFamily="@font/coolies"
         android:text="Save"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="30sp" />

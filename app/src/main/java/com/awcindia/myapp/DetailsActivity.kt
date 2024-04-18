@@ -8,8 +8,8 @@ import com.awcindia.myapp.databinding.ActivityDetailsBinding
 import com.awcindia.myapp.model.CartItems
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 import com.google.firebase.database.FirebaseDatabase
+
 
 class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding

@@ -42,14 +42,14 @@
                 android:id="@+id/foodname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="28dp"
                 android:fontFamily="@font/bergihan"
                 android:text="Food Name"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@+id/foodImage"
                 app:layout_constraintStart_toEndOf="@+id/foodImage"
                 app:layout_constraintTop_toTopOf="@+id/foodImage"
-                app:layout_constraintVertical_bias="0.064" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -78,30 +78,29 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/quantity"
+                android:id="@+id/foodquantity"
                 android:layout_width="24sp"
                 android:layout_height="24sp"
-                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="1"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/foodname"
-                app:layout_constraintHorizontal_bias="0.87"
-                app:layout_constraintStart_toStartOf="@+id/foodname"
-                app:layout_constraintTop_toBottomOf="@+id/foodname" />
+                app:layout_constraintBottom_toBottomOf="@+id/textView19"
+                app:layout_constraintStart_toEndOf="@+id/textView19"
+                app:layout_constraintTop_toTopOf="@+id/textView19" />
 
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Quantity:"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/quantity"
-                app:layout_constraintEnd_toStartOf="@+id/quantity"
-                app:layout_constraintTop_toTopOf="@+id/quantity" />
+                app:layout_constraintEnd_toEndOf="@+id/foodname"
+                app:layout_constraintStart_toStartOf="@+id/foodname"
+                app:layout_constraintTop_toBottomOf="@+id/foodname" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.awcindia.myapp.databinding.BuyAgainBinding
 import com.bumptech.glide.Glide
-import com.google.api.Context
 
 class BuyAgainAdapters(private val buyAgainFoodName : MutableList<String> , private val buyAgainFoodPrices : MutableList<String> , private val buyAgainFoodImages : MutableList<String>, private var requireContext : android.content.Context): RecyclerView.Adapter<BuyAgainAdapters.BuyAgainView>() {
 
@@ -28,8 +27,7 @@ class BuyAgainAdapters(private val buyAgainFoodName : MutableList<String> , priv
         fun bind(foodName: String, foodPrice: String, foodImage: String) {
             binding.buyAgainFoodName.text = foodName
             binding.buyAgainFoodPrice.text = foodPrice
-           val uriString = foodImage
-            val uri = Uri.parse(uriString)
+            val uri = Uri.parse(foodImage)
             Glide.with(requireContext).load(uri).into(binding.buyAgainFoodImage)
         }
     }

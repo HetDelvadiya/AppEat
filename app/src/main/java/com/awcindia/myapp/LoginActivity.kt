@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.R.string.dest_title
+
 import com.awcindia.myapp.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -38,9 +38,9 @@ class LoginActivity : AppCompatActivity() {
 
 
         // Google SignIn method
-        GoogleSignIn.getClient(
+        googleSignInClient = GoogleSignIn.getClient(
             this, GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(
-                getString(dest_title)).requestEmail().build()).also { googleSignInClient = it }
+                getString(R.string.app_name)).requestEmail().build())
 
         // Login process
         binding.login.setOnClickListener {
